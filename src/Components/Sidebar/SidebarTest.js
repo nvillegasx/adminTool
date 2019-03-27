@@ -58,16 +58,6 @@ class SidebarTest extends Component {
                 screenOne
               </li>
             </Link>
-            <Link to="/ScreenTwo"  style={noDecoration}>
-              <li className="nav-link">
-                screenTwo
-              </li>
-            </Link>
-            <Link to="/ScreenThree" style={noDecoration}>
-              <li className="nav-link">
-                screenThree
-              </li>
-            </Link> 
             <Link to="/testScreen" style={noDecoration}>
               <li className="nav-link">
                 TestScreen

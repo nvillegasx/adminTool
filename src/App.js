@@ -6,8 +6,6 @@ import{BrowserRouter as Router,Route} from 'react-router-dom';
 //import Cal from'./Components/Cal';
 //import MainMenu from './Components/MainMenu'
 import ScreenOne from './Components/Screens/ScreenOne';
-import ScreenTwo from './Components/Screens/ScreenTwo';
-import ScreenThree from './Components/Screens/ScreenThree';
 import LoginPage from './Components/Login/LoginPage';
 
 //test screen
@@ -34,8 +32,6 @@ class App extends Component {
              {/* Setting up the routes */}
             <Route exact path = "/" component= {LoginPage}/>
             <Route  path = "/screenOne" component= {ScreenOne}/>
-            <Route  path = "/screenTwo" component= {ScreenTwo}/>
-            <Route  path = "/screenThree" component= {ScreenThree}/>
             <Route  path = "/testScreen" component={TestScreen}/>
           </div>
         </Router>
