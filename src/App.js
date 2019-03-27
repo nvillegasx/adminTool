@@ -31,8 +31,9 @@ class App extends Component {
                 </header>   */}
              {/* Setting up the routes */}
             <Route exact path = "/" component= {LoginPage}/>
-            <Route  path = "/screenOne" component= {ScreenOne}/>
-            <Route  path = "/testScreen" component={TestScreen}/>
+            <Route exact path = "/testScreen" component={TestScreen}/>
+            <Route exact path = "/screenOne" component= {ScreenOne}/>
+            
           </div>
         </Router>
       </Provider>

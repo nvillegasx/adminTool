@@ -18,11 +18,11 @@ const MainMenu = () => {
       <div>
         <nav className= "navbar navbar-expand-sm  navbar-dark fixed-top" style={styleTest}>
           <ul className="navbar-nav">
-            <Link to="/screenOne" style={noDecoration}>
+            {/* <Link to="/screenOne" style={noDecoration}>
               <li className="nav-link" >
                 screenOne
               </li>
-            </Link>
+            </Link> */}
             <Link to="/testScreen" style={noDecoration}>
               <li className="nav-link">
                 TestScreen

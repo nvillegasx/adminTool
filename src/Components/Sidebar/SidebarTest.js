@@ -49,33 +49,34 @@ class SidebarTest extends Component {
       
            <Sidebar
            //passes the state of passedState as a prop to loginPage
-             children = { <LoginPage passedState={this.state.passingState}/>}
-              sidebar={
-        <div className="test">
-          <ul className="navbar-nav">
-            <Link to="/screenOne" style={noDecoration}>
-              <li className="nav-link" >
-                screenOne
-              </li>
-            </Link>
-            <Link to="/testScreen" style={noDecoration}>
-              <li className="nav-link">
-                TestScreen
-              </li>
-            </Link> 
-            <Link to="/" style={noDecoration}>
-              <li className="nav-link">
-                Log Out
-              </li>
-            </Link> 
-         </ul>  
-              </div>}
-              open= {this.state.sidebarOpen}
-              onSetOpen={this.onSetSidebarOpen}
+            children = { <LoginPage passedState={this.state.passingState}/>}
+            sidebar={
+            <div className="test">
+              <ul className="navbar-nav">
+               <Link to="/screenOne" style={noDecoration}>
+                  <li className="nav-link" >
+                   screenOne
+                 </li>
+                </Link>
+                <Link to="/testScreen" style={noDecoration}>
+                  <li className="nav-link">
+                    TestScreen
+                  </li>
+                </Link> 
+                <Link to="/" style={noDecoration}>
+                  <li className="nav-link">
+                  Log Out
+                  </li>
+                </Link> 
+              </ul>  
+            </div>}
+            open= {this.state.sidebarOpen}
+            onSetOpen={this.onSetSidebarOpen}
              //  Docked determines whether the sidebar should always be visible by setting equal to true the button
              //  will no longer be able to toggle the sidebar 
-              docked={true}
-              styles={{sidebar: {background:'#282c34', width:200} }}
+            docked={true}
+            transitions={false}
+            styles={{sidebar: {background:'#282c34', width:200} }}
            >
              {/* <button className="open" onClick={()=> this.onSetSidebarOpen(true)}>
              open sidebar
