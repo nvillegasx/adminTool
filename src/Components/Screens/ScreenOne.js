@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import PropTypes from 'prop-types' 
+
 
 import Posts from '../Posts'
 import  MainMenu from '../MainMenu';
@@ -13,11 +13,6 @@ import {Link} from 'react-router-dom';
 
 class ScreenOne extends Component {
 
-  PropTypes={
-    //match: PropTypes.object.isRequired,
-      location: PropTypes.object.isRequired,
-   // history: PropTypes.object.isRequired,
-  };
 
   
   constructor(props){
@@ -36,9 +31,6 @@ onSetSidebarOpen = (open) =>{
 }
  
   render() {
-
-    //const {match,location,history} = this.props;
-    const {pathname}=this.props.location;
 
     return (
       //using an inline style example
@@ -95,9 +87,9 @@ onSetSidebarOpen = (open) =>{
 }
 
 //style 
-const screenOneStyle={
-  paddingTop:'50px'
-};
+// const screenOneStyle={
+//   paddingTop:'50px'
+// };
 
 const mapStateToProps= state =>({
 
