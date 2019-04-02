@@ -13,6 +13,7 @@ import {Link} from 'react-router-dom';
 //import {withRouter} from 'react-router'
 
 import Header from '../Header';
+import DisplayEndpoints from '../DisplayEndpoints';
 
 class ScreenOne extends Component {
 
@@ -28,17 +29,12 @@ class ScreenOne extends Component {
       //using an inline style example
       <div className="Body">
         <Header />
-        <div className="WorkingArea">
-          <div className="Header">
+          <Sidebar2 className="sidebar"></Sidebar2>
+          <div class="main">
+              {/* <Posts/> */}
+              <DisplayEndpoints/>
           </div>
-          <div className="contentArea">
-            <Sidebar2 className="sidebar"></Sidebar2>
-            
-            <div class="main">
-                <Posts/>
-            </div>
-          </div>
-        </div>
+
       </div>
     )
   }

@@ -42,8 +42,28 @@ render() {
 
     return (
       <div>
-        <h1>Posts</h1>
-        {postItems}
+        <h1>Endpoint</h1>
+        <p>endpoint description</p>
+        <p>api call: https://api.com/v1/admins</p>
+        <div>
+          <p>Example call</p>
+          <p>Example response</p>
+        </div>
+        <div>
+          <h3>Path Params</h3>
+          <p>param 1</p>
+        </div>
+        <div>
+          <h3>Body Params</h3>
+          <p>param 1</p>
+        </div>
+        <div>
+          <h3>Responses</h3>
+          <div>
+            <h4>200 OK</h4>
+          </div>
+        </div>
+        {/* {postItems} */}
       </div>
     )
   }

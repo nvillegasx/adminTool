@@ -25,19 +25,13 @@ class App extends Component {
       <Provider store = {store}>
         <Router >
           <div className="App">
-            {/* <MainMenu /> */}
-            {/* 
-             note to self: I need to change the name of the MainMenu component
-             I should rename it to NavBar.
-              <header className="App-header">
-                    <MainMenu/>
-                </header>   */}
+
              {/* Setting up the routes */}
             <Route exact path = "/" component= {LoginPage}/>
             <Route exact path = "/testScreen" component={TestScreen}/>
             <Route exact path = "/screenOne" component= {ScreenOne}/>
             <Route exact path = "/applications" component= {Applications}/>
-            <Route exact pathe="/endpoints" component={DisplayEndpoints} />
+            <Route exact path ="/endpoints" component={DisplayEndpoints} />
             
           </div>
         </Router>
