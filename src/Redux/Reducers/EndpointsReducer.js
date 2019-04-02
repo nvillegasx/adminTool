@@ -1,18 +1,17 @@
-import{CHANGE_USERNAME} from '../Actions/Types'
+import{GET_ENDPOINTS} from '../Actions/Types'
 
 const initialState = {
-    userName:"" 
+    endpoints: []
 };
 
 export default function(state = initialState,action){
 
 
     switch(action.type){
-        case CHANGE_USERNAME:
+        case GET_ENDPOINTS:
         return {
             ...state,
-            //userName:action.payload
-            account:action.payload
+            endpoints: action.payload
         }
         default:
         return state;

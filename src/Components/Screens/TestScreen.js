@@ -4,10 +4,12 @@ import MainMenu from "../MainMenu";
 
 //import MainMenu from '../MainMenu';
 import "./sharedScreen.css"
-import "../Login/LoginPage"
-//import LoginPage from '../Login/LoginPage';
+// import "../Login/LoginPage"
+import LoginPage from '../Login/LoginPage';
 
 import  SidebarTest from '../Sidebar/SidebarTest';
+import Sidebar2 from '../Sidebar/Sidebar2'
+
 
  class TestScreen extends Component {
 
@@ -29,12 +31,13 @@ import  SidebarTest from '../Sidebar/SidebarTest';
   render() {
     return (
       <div>
-     <header className="App-header">
-          <MainMenu/>
-        </header>
+        <Sidebar2></Sidebar2>
+
+        <div className="Main">
+          <LoginPage/>
+        </div>
      
 
-      <SidebarTest/>
 
     
         {/* <Sidebar

@@ -29,7 +29,8 @@ import{connect} from 'react-redux';
 
   //****  Reminder :was editing this portion for the redux //
   changeUsername=(e)=>{
-      this.props.passUsername({username:e.target.value})
+      // this.props.passUsername({username:e.target.value})
+      this.props.passUsername({username: "dfsda"})      
 
       // would set the state back to an empty string
       // this.setState({username:''})

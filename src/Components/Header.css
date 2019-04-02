@@ -1,0 +1,9 @@
+.mainHeader{
+    display: flex;
+    background-color: rgb(255, 255, 255); /* Black */
+    /* margin: auto; */
+}
+.AMRlogo {
+    width: 15%;
+    align-self: flex-start;
+}

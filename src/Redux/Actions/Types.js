@@ -1,4 +1,7 @@
 
 export const FETCH_POSTS = 'FETCH_POSTS';
+export const GET_APPS = 'GET_APPS';
 export const FETCH_COMMENTS = 'FETCH_COMMENTS';
 export const CHANGE_USERNAME='CHANGE_USERNAME';
+export const FETCH_ADMINS ='FETCH_ADMINS';
+export const GET_ENDPOINTS = 'GET_ENDPOINTS';
