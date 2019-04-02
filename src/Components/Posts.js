@@ -33,8 +33,8 @@ render() {
     const postItems= this.props.posts.map(post =>(
         <div key={post.id}>
         <p>{post.id}</p>
-       <p>{post.title}</p>
-        <p>{post.body}</p>
+       <p>{post.firstName}</p>
+        <p>{post.lastName}</p>
         <p>{post.email}</p>
         </div>
 
