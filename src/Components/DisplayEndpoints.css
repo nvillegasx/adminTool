@@ -1,0 +1,10 @@
+.epData{
+    text-align: left;
+}
+.container{
+    min-height: 0%;
+}
+.param {
+    background-color: rgba(169, 169, 169, 0.363);
+    font-family: 'Courier New', Courier, monospace;
+}

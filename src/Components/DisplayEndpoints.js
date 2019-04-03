@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import{connect} from 'react-redux'
 import {getEndpoints} from '../Redux/Actions/EndpointActions'
+import './DisplayEndpoints.css'
 
 class DisplayEndpoints extends Component {
     constructor(props){
@@ -15,76 +16,103 @@ class DisplayEndpoints extends Component {
       this.props.getEndpoints()
   }
 
-  displayBody = (param) =>{
-    console.log("Body" + param)
-    if( param !== undefined)
-    {
-      param.map( bodyP => (
-        <div>
-          <p>{bodyP.name}</p>
-          <p>{bodyP.description}</p>
-          <p>{bodyP.isRequired}</p>
-        </div>
-      ))
-    }
-  }
-  displayPath = (pathP) => {
-    console.log("Path" + pathP)
-    if(pathP !== undefined)
-    {
-      pathP.map( path => (
-        <div>
-          <p>{path.language}</p>
-          <p>{path.dataType}</p>
-          <p>{path.description}</p>
-          <p>{path.isRequired}</p>
-        </div>
-      ))
-    }
-  }
+
 
   render() {
     const displayEPs= this.props.endpoints.map(ep =>(
       // the key needs to be unique fix this
-      <div key={ep.dateCreated}>
-        <h3>Endpoint: {ep.endpoint}</h3>
-        <h4>Routes:</h4>
-        {/* <p>App ID: {ep.application_id}</p>
-        <p>Date Created: {ep.dateCreated}</p> */}
-
+      <div key={ep.dateCreated} className="epData">
+        <h1>Endpoint: {ep.endpoint}</h1>
+        {console.log(ep)}
         {ep.routes.map(route =>(
           <div>
-            <p>{route.requestType}</p>
-            <p>{route.description}</p>
-            <h4>Body Params</h4>
-            {/* { this.displayBody(route.bodyParams)} */}
+            <h4>Route:</h4>
+            <p>Type: {route.requestType}</p>
+            <p>Description: {route.description}</p>
+
+            { route.bodyParams.length != 0 ? 
+            <div>
+              <h4>Body Params</h4>
+              <div className="row">
+                    <div className="col-sm">
+                      <h5>Name</h5>
+                    </div>
+                    <div className="col-sm">
+                      <h5>Description</h5>
+                    </div>
+                    <div className="col-sm">
+                      <h5>Required </h5>
+                    </div>
+                </div>
+              </div>
+              : null
+            }
+              
             { route.bodyParams !== undefined ? 
               (route.bodyParams.map( path => (
-                <div>
-                  <p>{path.language}</p>
-                  <p>{path.dataType}</p>
-                  <p>{path.description}</p>
-                  <p>{path.isRequired}</p>
+
+                <div className="row">
+                  <div className="col-sm">
+                    <div>
+                      <p><span className="param">{path.name}</span></p>
+                    </div>
+                  </div>
+                  <div className="col-sm">
+                    <p>{path.description}</p>
+                  </div>
+                  <div className="col-sm">
+                    <p>{path.isRequired}</p>
+                  </div>
                 </div>
               ))
               )
               : null
             }
-            <h4>Path Params:</h4>
-            {this.displayPath(route.pathParams)}
-            {/* {
-              route.pathParms.map( path => (
-                <div>
-                  <p>{path.language}</p>
-                  <p>{path.dataType}</p>
-                  <p>{path.description}</p>
-                  <p>{path.isRequired}</p>
+            { route.pathParams.length != 0 ?
+              <div> 
+                <h4>Path Params</h4>
+                <div className="row">
+                  <div className="col-sm">
+                    <h5>Name</h5>
+                  </div>
+                  <div className="col-sm">
+                    <h5>Data Type</h5>
+                  </div>
+                  <div className="col-sm">
+                    <h5>Description</h5>
+                  </div>
+                  <div className="col-sm">
+                    <h5>Required </h5>
+                  </div>
                 </div>
+              </div>
+              : null
+            }
+            { route.pathParams !== undefined ? 
+              (route.pathParams.map( path => (
+                <div className="row">
+                  <div className="col-sm">
+                    <p><span className="param">{path.name}</span></p>
+                  </div>
+                  <div className="col-sm">
+                    <p><span className="param">{path.dataType}</span></p>
+                  </div>
+                  <div className="col-sm">
+                    <p>{path.description}</p>
+                  </div>
+                  <div className="col-sm">
+                    <p>{path.isRequired}</p>
+                  </div>
+                </div>
+                
               ))
-            } */}
+              )
+              : null
+            }
           </div>
         ))
         }
+        <hr></hr>
       </div>
 
   ))

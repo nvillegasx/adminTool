@@ -11,18 +11,12 @@ export const getEndpoints=()=> dispatch =>{
     }
     axios.get('https://integratedservices.amr.net/msat/api/v1/apiEndpoints', {params})
     .then(
-        // (response)=>
-        // console.log( response.data.endpoints)
         (response) =>
         {dispatch({
         type: GET_ENDPOINTS,
         payload: response.data.endpoints
-    })
-    // console.log(response.data.endpoints)
-}
+        })
+        }
     );
-
-    // axios.get('https://integratedservices.amr.net/msat/api/v1/admins', { type: 'allAdmins'})
-    // .then(response => console.log(response))
 
 }
