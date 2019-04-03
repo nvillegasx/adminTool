@@ -52,7 +52,8 @@ import{connect} from 'react-redux';
             {/* <input type="submit" value= "submit"/> */}
           </form>  
        
-          <Link to ='ScreenOne'>
+        {/* the link was to screen one */}
+          <Link to ='AppSelection'>
             <button className="btn btn-secondary">Login</button>
           </Link>
           

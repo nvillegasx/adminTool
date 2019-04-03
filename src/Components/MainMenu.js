@@ -28,17 +28,19 @@ const MainMenu = () => {
                 TestScreen
               </li>
             </Link>  */}
+
+            <Link to="/enpointDoc">
+              <button className="btn btn-secondary ">
+                Endpoint Documentation
+              </button>
+            </Link>
             <Link to="/" style={noDecoration}>
               <li className="nav-link">
                 Log Out
               </li>
             </Link> 
 
-            <Link to="/enpointDoc">
-            <button className="btn btn-secondary ">
-              Endpoint Documentation
-            </button>
-            </Link>
+            
          </ul>
         </nav>   
       </div>
