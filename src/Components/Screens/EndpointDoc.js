@@ -5,6 +5,7 @@ import MainMenu from "../MainMenu";
 import Sidebar from "react-sidebar";
 //import Posts from "../Posts";
 import Endpoints from "../Endpoints"
+import DisplayEndpoints from "../DisplayEndpoints"
 
 class EndpointDoc extends Component {
 
@@ -34,9 +35,10 @@ class EndpointDoc extends Component {
                  <MainMenu />
                  
                 </header>
-                
-              
+          
                 <h1>username: {this.props.user}</h1>
+                <DisplayEndpoints/>
+
               </div>
           }
           sidebar={

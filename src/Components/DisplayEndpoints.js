@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import{connect} from 'react-redux'
-import {getEndpoints} from '../Redux/Actions/EndpointActions'
+import {getEndpoints} from '../Redux/Actions/DisplayActions'
 import './DisplayEndpoints.css'
 
 class DisplayEndpoints extends Component {
@@ -30,7 +30,7 @@ class DisplayEndpoints extends Component {
             <p>Type: {route.requestType}</p>
             <p>Description: {route.description}</p>
 
-            { route.bodyParams.length != 0 ? 
+            { route.bodyParams.length !== 0 ? 
             <div>
               <h4>Body Params</h4>
               <div className="row">
@@ -68,7 +68,7 @@ class DisplayEndpoints extends Component {
               )
               : null
             }
-            { route.pathParams.length != 0 ?
+            { route.pathParams.length !== 0 ?
               <div> 
                 <h4>Path Params</h4>
                 <div className="row">

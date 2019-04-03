@@ -33,11 +33,12 @@ const MainMenu = () => {
                 Log Out
               </li>
             </Link> 
-            <button className="btn btn-secondary ">
+
             <Link to="/enpointDoc">
-            Endpoint Documentation
-            </Link>
+            <button className="btn btn-secondary ">
+              Endpoint Documentation
             </button>
+            </Link>
          </ul>
         </nav>   
       </div>
