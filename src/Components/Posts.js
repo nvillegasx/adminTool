@@ -21,6 +21,7 @@ componentWillMount(){
 
     //this.props.fetchPosts();
     console.log(this.props);
+    
     //if the route is on the path of screen one call this.props.fetchComments
     if(this.props.pathScreenOne){
     this.props.fetchComments();

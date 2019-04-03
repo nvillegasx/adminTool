@@ -23,16 +23,21 @@ const MainMenu = () => {
                 screenOne
               </li>
             </Link> */}
-            <Link to="/testScreen" style={noDecoration}>
+            {/* <Link to="/testScreen" style={noDecoration}>
               <li className="nav-link">
                 TestScreen
               </li>
-            </Link> 
+            </Link>  */}
             <Link to="/" style={noDecoration}>
               <li className="nav-link">
                 Log Out
               </li>
             </Link> 
+            <button className="btn btn-secondary ">
+            <Link to="/enpointDoc">
+            Endpoint Documentation
+            </Link>
+            </button>
          </ul>
         </nav>   
       </div>
