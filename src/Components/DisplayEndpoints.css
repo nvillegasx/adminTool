@@ -8,3 +8,16 @@
     background-color: rgba(169, 169, 169, 0.363);
     font-family: 'Courier New', Courier, monospace;
 }
+.rowTitle {
+    border-style: solid lightgray;
+    background-color: lightgray;
+    /* background-color: rgba(53, 53, 53, 0.466); */
+}
+.rowData {
+    border-bottom: solid lightgray;
+    border-left: solid lightgray;
+    border-right: solid lightgray;
+}
+.pathBodySpace{
+    padding-top: 2%;
+}

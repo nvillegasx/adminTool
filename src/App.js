@@ -15,6 +15,8 @@ import TestScreen from './Components/Screens/TestScreen'
 
 import './App.css';
 import DisplayEndpoints from './Components/DisplayEndpoints';
+import AddEndpoint from './Components/AddEndpoint';
+
 
 /* This was the header for the navigation bar had to move it to each of the individual screens since
    I do not want the login to contain the routes for each of the screens */
@@ -32,6 +34,8 @@ class App extends Component {
             <Route exact path = "/screenOne" component= {ScreenOne}/>
             <Route exact path = "/applications" component= {Applications}/>
             <Route exact path ="/endpoints" component={DisplayEndpoints} />
+            <Route exact path ="/addendpoint" component={AddEndpoint} />
+
             
           </div>
         </Router>

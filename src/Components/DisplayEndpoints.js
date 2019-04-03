@@ -23,6 +23,7 @@ class DisplayEndpoints extends Component {
       // the key needs to be unique fix this
       <div key={ep.dateCreated} className="epData">
         <h1>Endpoint: {ep.endpoint}</h1>
+        <hr></hr>
         {console.log(ep)}
         {ep.routes.map(route =>(
           <div>
@@ -33,7 +34,7 @@ class DisplayEndpoints extends Component {
             { route.bodyParams.length != 0 ? 
             <div>
               <h4>Body Params</h4>
-              <div className="row">
+              <div className="row rowTitle">
                     <div className="col-sm">
                       <h5>Name</h5>
                     </div>
@@ -51,7 +52,7 @@ class DisplayEndpoints extends Component {
             { route.bodyParams !== undefined ? 
               (route.bodyParams.map( path => (
 
-                <div className="row">
+                <div className="row rowData">
                   <div className="col-sm">
                     <div>
                       <p><span className="param">{path.name}</span></p>
@@ -69,9 +70,9 @@ class DisplayEndpoints extends Component {
               : null
             }
             { route.pathParams.length != 0 ?
-              <div> 
+              <div className="pathBodySpace"> 
                 <h4>Path Params</h4>
-                <div className="row">
+                <div className="row rowTitle">
                   <div className="col-sm">
                     <h5>Name</h5>
                   </div>
@@ -90,7 +91,7 @@ class DisplayEndpoints extends Component {
             }
             { route.pathParams !== undefined ? 
               (route.pathParams.map( path => (
-                <div className="row">
+                <div className="row rowData">
                   <div className="col-sm">
                     <p><span className="param">{path.name}</span></p>
                   </div>
@@ -120,8 +121,6 @@ class DisplayEndpoints extends Component {
     return (
       <div >
         {displayEPs}
-        {console.log(this.props.endpoints)}
-
       </div>
     )
   }
