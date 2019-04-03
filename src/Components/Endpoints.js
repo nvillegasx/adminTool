@@ -34,6 +34,13 @@ render() {
     const displayEndpoints = this.props.requests.map(request=>(
         <div key={request.id}>
         <p>{request.endpoint}</p>
+        {request.routes.map(route =>(
+          <div>
+            <p>{route.requestType}</p>
+            </div>
+          ))
+          
+        }     
         </div>
     ))
 
