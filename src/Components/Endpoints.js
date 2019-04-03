@@ -35,7 +35,7 @@ render() {
         <div key={request.id}>
         <p>{request.endpoint}</p>
         {request.routes.map(route =>(
-          <div>
+          <div key={route.id}>
             <p>{route.requestType}</p>
             </div>
           ))
