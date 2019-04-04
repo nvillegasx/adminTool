@@ -71,9 +71,46 @@ class AddEndpoint extends Component {
     componentWillUpdate = () => {
         
     }
+
     displayRows = () =>{
         return this.state.bodyParamRows
     }
+
+    addRow=()=>{
+        var  row = this.state.bodyParamRows
+        let newrow =
+        <div className="form-group">
+
+        <div className="row">
+            <div className="col-sm">
+                <input type="text"></input>
+            </div>
+            <div className="col-sm">
+                <input type="text"></input>
+            </div>
+            <div className="col-sm">
+                <div className="row">
+                    <div className="col-sm">
+                        <input type="radio" name="bodyRequired" value="yes"></input>
+                        Yes
+                    </div>
+                    <div className="col-sm">
+                        <input type="radio" name="bodyRequired" value="no"></input>
+                        No
+                    </div>
+                </div>
+            </div>
+            <div className="col-sm">
+                <input type="text"></input>
+            </div>
+        </div>
+        </div>
+        row.push(newrow)
+        this.setState({ bodyParamRows: row})
+    }
+
+    
+
   render() {
     return (
       <div className="w-50 p-3">
@@ -96,6 +133,12 @@ class AddEndpoint extends Component {
                     <option>DELETE</option>
                 </select>
             </div>
+
+
+
+            
+
+
             {/* bodyParamField */}
             <div className="form-group" id="BP" ref="BP">
                 <label>Body Parameters</label>
@@ -143,6 +186,8 @@ class AddEndpoint extends Component {
                     <div className="col-sm"></div>
                 </div>
             </div>
+
+            {/* path Parameter rows */}
             <div className="form-group">
                 <label>Path Parameters</label>
                 <div className="row">
@@ -182,13 +227,25 @@ class AddEndpoint extends Component {
                         <input type="text"></input>
                     </div>
                 </div>
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-sm"></div>
                     <div className="col-sm"><button>Add Parameter</button></div>
                     <div className="col-sm"></div>
-                </div>
+                </div> */}
             </div>
         </form>
+        <div>
+                <table>
+                    {this.state.bodyParamRows.map(r =>(
+                        <tr>
+                            <td>{r}</td>
+                        </tr>
+                        ))}
+
+                </table>
+                <button onClick={this.addRow}>Add</button>
+
+            </div>
       </div>
     )
   }
