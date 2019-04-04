@@ -10,7 +10,8 @@ import {getApplications} from '../Redux/Actions/ApplicationDActions'
 constructor(props){
   super(props);
   this.state={
-    title:''
+    appActive:'',
+    appsAvailabel: []
   }
 }
 
@@ -18,36 +19,42 @@ constructor(props){
 
 
 componentWillMount(){
-
     //this.props.fetchrequests();
     console.log(this.props);
-    
     //if the route is on the path of screen one call this.props.fetchComments
-
     this.props.getApplications();
-    
- 
 }
-    
+
+appTest =(apps)=>{
+  var appsAvailable = this.state.appsAvailabel
+  appsAvailable.push(apps)
+  this.setState({appsAvailable:appsAvailable})
+}
+
+
 render() {
     
     const applicationDisplay = this.props.application.map(app=>(
         <div key={app.id}>
-        <p>{app.name}</p>
+        <button>{app.name}</button>
         </div>
     ))
 
-   
+    
     return (
       <div>
         <h1>Welcome Admin: please select an application to administer</h1>
-        <button>
+        {/* {this.appTest(applicationDisplay)} */}
+        <p>{this.state.appsAvailabel}</p>
+        
          {applicationDisplay}
-         </button>
+        
       </div>
     )
   }
 }
+
+
 
 //maps the state to the props (sort of like creating props from the state)
 const mapStateToProps= state =>({
