@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import{connect} from 'react-redux'
 
 import {getApplications} from '../Redux/Actions/ApplicationDActions'
-
+import {Link} from 'react-router-dom'
 
 
  class Applications extends Component {
@@ -10,7 +10,7 @@ import {getApplications} from '../Redux/Actions/ApplicationDActions'
 constructor(props){
   super(props);
   this.state={
-    appActive:'',
+    appActive:'testing',
     appsAvailabel: []
   }
 }
@@ -25,10 +25,9 @@ componentWillMount(){
     this.props.getApplications();
 }
 
-appTest =(apps)=>{
-  var appsAvailable = this.state.appsAvailabel
-  appsAvailable.push(apps)
-  this.setState({appsAvailable:appsAvailable})
+appTest =()=>{
+ 
+  this.setState({appActive:'new'})
 }
 
 
@@ -36,7 +35,9 @@ render() {
     
     const applicationDisplay = this.props.application.map(app=>(
         <div key={app.id}>
-        <button>{app.name}</button>
+        {/* <Link to="/screenOne"> */}
+        <button onClick={this.appTest}>{app.name}</button>
+        {/* </Link> */}
         </div>
     ))
 
@@ -45,7 +46,7 @@ render() {
       <div>
         <h1>Welcome Admin: please select an application to administer</h1>
         {/* {this.appTest(applicationDisplay)} */}
-        <p>{this.state.appsAvailabel}</p>
+        <p>{this.state.appActive}</p>
         
          {applicationDisplay}
         
