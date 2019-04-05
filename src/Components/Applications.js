@@ -25,18 +25,18 @@ componentWillMount(){
     this.props.getApplications();
 }
 
-appTest =()=>{
+appTest =(num)=>{
  
-  this.setState({appActive:'new'})
+  this.setState({appActive:num})
 }
 
 
 render() {
     
-    const applicationDisplay = this.props.application.map(app=>(
+    const applicationDisplay = this.props.application.map((app)=>(
         <div key={app.id}>
         {/* <Link to="/screenOne"> */}
-        <button onClick={this.appTest}>{app.name}</button>
+        <button onClick={() => this.appTest(app.id)}>{app.name}</button>
         {/* </Link> */}
         </div>
     ))
