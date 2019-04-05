@@ -64,3 +64,5 @@ const mapStateToProps= state =>({
 })
 
 export default connect(mapStateToProps,{getApplications})(Applications);
+
+//
