@@ -7,46 +7,17 @@ class AddEndpoint extends Component {
         this.mybodyParamTable = React.createRef();
         this.state ={
             bodyParamRows: [],
-            pathParamRows: []
+            pathParamRows: [],
+            numBodyParam: 0,
+            numPathParam: 0
         }
 
     }
 
-    addBodyParam = () =>
-    {
-        
-        let newRow =
-            <div className="row">
-                <div className="col-sm">
-                    <input type="text"></input>
-                </div>
-                <div className="col-sm">
-                    <input type="text"></input>
-                </div>
-                <div className="col-sm">
-                    <div className="row">
-                        <div className="col-sm">
-                            <input type="radio" name="bodyRequired" value="yes"></input>
-                            Yes
-                        </div>
-                        <div className="col-sm">
-                            <input type="radio" name="bodyRequired" value="no"></input>
-                            No
-                        </div>
-                    </div>
-                </div>
-                <div className="col-sm">
-                    <input type="text"></input>
-                </div>
-            </div>
-        
-        let newState = this.state.bodyParamRows
-        newState.push(newRow)
-        this.setState({ bodyParamRows: newState})
-    }
 
 
     addBodyParamRow=()=>{
+        let newName = "b" + this.state.numBodyParam
         var  row = this.state.bodyParamRows
         let newrow =
         <div className="form-group">
@@ -61,11 +32,11 @@ class AddEndpoint extends Component {
             <div className="col-sm">
                 <div className="row">
                     <div className="col-sm">
-                        <input type="radio" name="bodyRequired" value="yes"></input>
+                        <input type="radio" name={newName} value="yes"></input>
                         Yes
                     </div>
                     <div className="col-sm">
-                        <input type="radio" name="bodyRequired" value="no"></input>
+                        <input type="radio" name={newName} value="no"></input>
                         No
                     </div>
                 </div>
@@ -75,11 +46,17 @@ class AddEndpoint extends Component {
             </div>
         </div>
         </div>
+
+        let newNumParams = this.state.numBodyParam
+        newNumParams = newNumParams + 1
+        this.setState({numBodyParam: newNumParams})
+
         row.push(newrow)
         this.setState({ bodyParamRows: row})
     }
     addRow=()=>{
         var  row = this.state.pathParamRows
+        let newName = "p" + this.state.numPathParam
         let newrow =
         <div className="form-group">
 
@@ -93,11 +70,11 @@ class AddEndpoint extends Component {
             <div className="col-sm">
                 <div className="row">
                     <div className="col-sm">
-                        <input type="radio" name="bodyRequired" value="yes"></input>
+                        <input type="radio" name={newName} value="yes"></input>
                         Yes
                     </div>
                     <div className="col-sm">
-                        <input type="radio" name="bodyRequired" value="no"></input>
+                        <input type="radio" name={newName} value="no"></input>
                         No
                     </div>
                 </div>
@@ -107,6 +84,11 @@ class AddEndpoint extends Component {
             </div>
         </div>
         </div>
+
+        let newNumParams = this.state.numPathParam
+        newNumParams = newNumParams + 1
+        this.setState({numPathParam: newNumParams})
+
         row.push(newrow)
         this.setState({ pathParamRows: row})
     }
