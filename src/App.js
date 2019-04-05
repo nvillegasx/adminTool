@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {Provider} from 'react-redux';
 import store from './store';
-import{BrowserRouter as Router,Route} from 'react-router-dom';
+import{ Router,Route} from 'react-router-dom';
+//before was BrowserRouter as Router
+import history from './Components/history'
 
 //import Cal from'./Components/Cal';
 //import MainMenu from './Components/MainMenu'
@@ -26,7 +28,7 @@ class App extends Component {
   render() {
     return ( 
       <Provider store = {store}>
-        <Router >
+        <Router history={history} >
           <div className="App">
             {/* 
              note to self: I need to change the name of the MainMenu component

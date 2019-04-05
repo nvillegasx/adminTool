@@ -1,6 +1,6 @@
 import axios from "axios"
-import{GET_APPLICATIONS_ID} from './Types'
-
+import{GET_APPLICATIONS} from './Types'
+import{ GET_APPLICATIONS_ID} from './Types'
 
 export const getApplications=()=> dispatch =>{
 
@@ -17,10 +17,21 @@ export const getApplications=()=> dispatch =>{
     .then(
         (response) =>
         {dispatch({
-        type: GET_APPLICATIONS_ID,
+        type: GET_APPLICATIONS,
         payload: response.data.applications
         })
         }
     );
 
 }
+
+export const passApplicationID = applicationId =>({
+
+    type:GET_APPLICATIONS_ID,
+    payload:applicationId
+     
+      //does not need username since the payload is being passed from
+      //the login user enters
+  
+    
+}) 
