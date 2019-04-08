@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import{connect} from 'react-redux'
-
+import image from "../Images/mountain.jpeg";
 import {getApplications,passApplicationID} from '../Redux/Actions/ApplicationActions'
 //import {Link} from 'react-router-dom'
 import history from './history';
@@ -46,12 +46,12 @@ render() {
     
     const applicationDisplay = this.props.application.map((app)=>(
         <div key={app.id}>
-        {/* <Link to={{
-          pathname:"/screenOne",
-          state:{appActive:this.state.appActive}
-        }}> */}
-        <button onClick={() => this.changeAppActive(app.id)}>{app.name}</button>
-        {/* </Link> */}
+    
+        <button onClick={() => this.changeAppActive(app.id)} className="btn btn-primary  btn-lg"><img src = {image} alt=""/>
+          <div>
+          {app.name}
+          </div>
+        </button>
         </div>
     ))
     return (

@@ -2,6 +2,7 @@ import{CHANGE_USERNAME} from '../Actions/Types'
 
 const initialState = {
     //userName:"" 
+   account:""
 };
 
 export default function(state = initialState,action){

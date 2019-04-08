@@ -19,8 +19,14 @@ class ScreenOne extends Component {
   }
 
   
+
+  
   render() {
+
+    // const testing= this.props.user
+
     return (
+      
       //using an inline style example
       <div className="Body">
         <Sidebar
@@ -32,6 +38,9 @@ class ScreenOne extends Component {
                  
                 </header>
                 <Posts />
+
+                {/* {sessionStorage.setItem("Username",testing)} */}
+
                 <h1>username: {this.props.user}</h1>
               </div>
           }
