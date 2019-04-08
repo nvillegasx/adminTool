@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import{connect} from 'react-redux'
 
 import {getApplications,passApplicationID} from '../Redux/Actions/ApplicationActions'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import history from './history';
 
  class Applications extends Component {
