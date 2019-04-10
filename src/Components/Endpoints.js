@@ -3,7 +3,7 @@ import{connect} from 'react-redux'
 
 import {fetchRequestType} from '../Redux/Actions/EndpointActions'
 
-
+import './DisplayEndpoints.css'
 
  class Endpoints extends Component {
  
@@ -30,26 +30,38 @@ componentWillMount(){
 }
     
 render() {
-
-    //maps the endpoints retrieved from the api 
+    
     const displayEndpoints = this.props.requests.map(request=>(
         <div key={request.id}>
-        <p>{request.endpoint}</p>
+        {/* <p>{request.endpoint}</p> */}
         {request.routes.map(route =>(
           <div key={route.id}>
-            <p>{route.requestType}</p>
+          {/* <button className="btn btn-success btn-sm"> {route.requestType} </button>
+            <button className="btn btn-secondary btn-sm"> {request.endpoint} - {route.id} </button> */}  
+
+            <a href={"#"+route.id}>
+            <button className="btn btn-secondary btn-sm button-css"> 
+            <span className={"styling small rounded text-centered font-weight-bold "
+            //if route.requestType===GET add the class bg-sucess to className
+            +(route.requestType==='PUT'?"bg-warning":"")
+            +(route.requestType==='GET'?"bg-success ":"bg-primary ")
+            }>
+            {route.requestType}</span>  {request.endpoint} - {route.id}</button></a>
             </div>
-          ))
-          
+          ))    
         }     
         </div>
     ))
-
+      
    
     return (
       <div>
-        <h1>requests</h1>
+        <h1>Enpoints</h1>
         {displayEndpoints}
+        <br/>
+        <div>
+        <span>create new endpoint  </span><button className="btn btn-primary rounded-circle ">+</button>
+        </div>
       </div>
     )
   }

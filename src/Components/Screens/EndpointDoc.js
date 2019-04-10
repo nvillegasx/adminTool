@@ -7,6 +7,8 @@ import Sidebar from "react-sidebar";
 import Endpoints from "../Endpoints"
 import DisplayEndpoints from "../DisplayEndpoints"
 
+import '../DisplayEndpoints.css'
+
 class EndpointDoc extends Component {
 
 
@@ -31,7 +33,7 @@ class EndpointDoc extends Component {
           //passes the state of passedState as a prop to loginPage
           children={
               <div>
-                <header className="App-header">
+                <header className="App-header ">
                  <MainMenu />
                  
                 </header>

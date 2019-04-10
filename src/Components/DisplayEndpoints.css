@@ -8,3 +8,32 @@
     background-color: rgba(169, 169, 169, 0.363);
     font-family: 'Courier New', Courier, monospace;
 }
+.styling{
+
+    padding-left:5%;
+    padding-right:5%;
+}
+.button-css{
+    width:60%;
+}
+
+.body{
+    margin-left:2%;
+}
+
+.typeDisplay{
+    color:white;
+    padding-left:.3%;
+    padding-right:.3%;
+}
+
+
+
+h3::before{
+    display: block; 
+    content: " "; 
+    margin-top: -350px; 
+    height: 350px; 
+    visibility: hidden; 
+    pointer-events: none;
+}
