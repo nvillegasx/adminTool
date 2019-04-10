@@ -4,17 +4,35 @@ import './AddEndpoint.css'
 class AddEndpoint extends Component {
     constructor(props){
         super(props);
-        this.mybodyParamTable = React.createRef();
         this.state ={
             bodyParamRows: [],
             pathParamRows: [],
             bodyParams:[],
             pathParams:[],
             numBodyParam: 0,
-            numPathParam: 0
+            numPathParam: 0,
+            endpointData: {}
         }
 
     }
+    setEndpointName=(e)=>{
+        // use the idx to set the array element to the needed values
+        this.state.endpointData.name = e.target.value
+        console.log(this.state.endpointData)
+
+    }
+    setEndpointDesc=(e)=>{
+        // use the idx to set the array element to the needed values
+        this.state.endpointData.description = e.target.value
+        console.log(this.state.endpointData)
+
+    }
+    setEndpointType=(e)=>{
+        // use the idx to set the array element to the needed values
+        this.state.endpointData.type = e.target.value
+        console.log(this.state.endpointData)
+    }
+
     setBodyParamName=(idx, e)=>{
         // use the idx to set the array element to the needed values
         if(this.state.bodyParams == [] || this.state.bodyParams[idx] == undefined )
@@ -79,7 +97,7 @@ class AddEndpoint extends Component {
                 <input type="text" onChange={ (e) => this.setBodyParamName(paramIdx, e)}></input>
             </div>
             <div className="col-sm">
-                <input type="text" onChange={ (e) => this.setBodyParamType(paramIdx, e)}></input>
+                <input type="text" onChange={ (e) => this.setBodyParamType( paramIdx, e)}></input>
             </div>
             <div className="col-sm">
                 <div className="row">
@@ -96,6 +114,7 @@ class AddEndpoint extends Component {
             <div className="col-sm">
                 <input type="text" onChange={ (e) => this.setBodyParamDesc(paramIdx, e) }></input>
             </div>
+
         </div>
         </div>
 
@@ -196,21 +215,30 @@ class AddEndpoint extends Component {
         row.push(newrow)
         this.setState({ pathParamRows: row})
     }
+
+    submitEndpoint=()=>{
+        // let dataToSend = this.state.endpointData;
+        // dataToSend.bodyParameters = this.state.bodyParams
+        // dataToSend.pathParameters = this.state.pathParams
+        
+        // append name, descript, type, body and path
+        // console.log(dataToSend)
+    }
   render() {
     return (
       <div className="w-50 p-3">
         <form>
             <div className="form-group">
                 <label>Name of endpoint</label>
-                <input type="text" className="form-control"></input>
+                <input type="text" className="form-control" onChange={(e) => this.setEndpointName(e)}></input>
             </div>
             <div className="form-group">
                 <label>Endpoint Description</label>
-                <textarea className="form-control"></textarea>
+                <textarea className="form-control" onChange={(e) => this.setEndpointDesc(e)}></textarea>
             </div>
             <div className="form-group">
                 <label>Endpoint Type</label>
-                <select className="form-control">
+                <select className="form-control" onChange={(e) => this.setEndpointType(e)}>
                     <option disabled selected value> -- select an option -- </option>
                     <option>GET</option>
                     <option>POST</option>
@@ -235,6 +263,9 @@ class AddEndpoint extends Component {
                     </div>
                     <div className="col-sm">
                         Description
+                    </div>
+                    <div className="col-sm">
+
                     </div>
                 </div>
             </div>
@@ -276,6 +307,21 @@ class AddEndpoint extends Component {
                     ))}
             </div>
             <button onClick={this.addRow}>Add</button>
+        </div>
+        <div className="form-group">
+            <label>Example Call</label>
+            <div className="row">
+                <input type="file" accept="image/*"></input>
+            </div>
+        </div>
+        <div className="form-group">
+            <label>Example Payload</label>
+            <div className="row">
+                <input type="file" accept="image/*"></input>
+            </div>
+        </div>
+        <div className="form-group" style={{paddingTop: '50px'}}>
+            <button className="btn btn-success" onClick={()=> this.submitEndpoint()} >Add Endpoint</button>
         </div>
       </div>
     )

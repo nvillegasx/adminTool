@@ -21,6 +21,9 @@ class DisplayEndpoints extends Component {
   render() {
     const displayEPs= this.props.endpoints.map(ep =>(
       // the key needs to be unique fix this
+      <div>
+      {/* if its an empty endpoint dont display*/}
+      { ep.routes.length != 0 ?
       <div key={ep.dateCreated} className="epData">
         <h1>Endpoint: {ep.endpoint}</h1>
         <hr></hr>
@@ -115,8 +118,10 @@ class DisplayEndpoints extends Component {
         }
         <hr></hr>
       </div>
+      : null} 
+      </div>
 
-  ))
+    ))
 
     return (
       <div >

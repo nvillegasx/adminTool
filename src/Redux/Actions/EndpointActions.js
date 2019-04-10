@@ -20,3 +20,13 @@ export const getEndpoints=()=> dispatch =>{
     );
 
 }
+
+export const createNewEndpointRoute=(routeData)=> dispatch => {
+    // {
+    //     "endpointID": "1",
+    //     "adminID": "1",
+    //     "requestType": "GET",
+    //     "description": "Returns all the terms and conditions",
+    //     "exCall": "api/v1/terms"
+    // }
+}

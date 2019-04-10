@@ -16,6 +16,7 @@ import TestScreen from './Components/Screens/TestScreen'
 import './App.css';
 import DisplayEndpoints from './Components/DisplayEndpoints';
 import AddEndpoint from './Components/AddEndpoint';
+import AddResponses from './Components/AddResponses';
 
 
 /* This was the header for the navigation bar had to move it to each of the individual screens since
@@ -35,6 +36,7 @@ class App extends Component {
             <Route exact path = "/applications" component= {Applications}/>
             <Route exact path ="/endpoints" component={DisplayEndpoints} />
             <Route exact path ="/addendpoint" component={AddEndpoint} />
+            <Route exact path ="/addresponses" component={AddResponses} />
 
             
           </div>
