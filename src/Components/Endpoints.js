@@ -30,7 +30,8 @@ componentWillMount(){
 }
     
 render() {
-    
+
+    //maps the endpoints retrieved from the api 
     const displayEndpoints = this.props.requests.map(request=>(
         <div key={request.id}>
         <p>{request.endpoint}</p>
