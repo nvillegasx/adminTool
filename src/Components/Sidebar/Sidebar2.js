@@ -9,14 +9,14 @@ return (
             screenOne
             </li>
         </Link>
-        <Link to="/testScreen" >
+        <Link to="/addendpoint" >
             <li className="nav-link">
-            TestScreen
+            addendpoint
             </li>
         </Link> 
-        <Link to="/" >
+        <Link to="/addresponses" >
             <li className="nav-link">
-            Log Out
+            Responses
             </li>
         </Link> 
         <a href="#">Contact</a>
