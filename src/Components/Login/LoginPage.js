@@ -1,10 +1,12 @@
 import React, { Component} from 'react';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import image from "../../Images/mountain.jpeg";
 import "./LoginPage.css";
 
 import {passUsername} from "../../Redux/Actions/UserActions";
 import{connect} from 'react-redux';
+import history from '../history';
+
 
  class LoginPage extends Component {
 
@@ -35,6 +37,12 @@ import{connect} from 'react-redux';
       // this.setState({username:''})
   }
 
+  changeScreen=()=>{
+
+    history.push("/AppSelection");
+  }
+  
+
   render() {
     return (
       <div className="container">
@@ -53,9 +61,10 @@ import{connect} from 'react-redux';
           </form>  
        
         {/* the link was to screen one */}
-          <Link to ='AppSelection'>
-            <button className="btn btn-secondary">Login</button>
-          </Link>
+
+          {/* <Link to ='AppSelection'> */}
+            <button onClick={() => this.changeScreen()} className="btn btn-secondary">Login</button>
+          {/* </Link> */}
           
           {/* usig the prop of the passed state for testing of passing state */}
           <h2><br/>{this.props.passedState}</h2>
