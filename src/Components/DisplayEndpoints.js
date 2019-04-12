@@ -32,26 +32,26 @@ class DisplayEndpoints extends Component {
             +(route.requestType==='PUT'?"bg-warning":"")
             +(route.requestType==='GET'?"bg-success ":"bg-primary ")
             }>
-            {route.requestType}</span> Route:</h3>
-            <p>Type: {route.requestType}</p>
-            <p>Description: {route.description}</p>
+            {route.requestType}</span> Route</h3>
+            {/* <p>Type: {route.requestType}</p> */}
+            <p>{route.description}</p>
 
 
 
 
             {/* bodyParams */}
             { route.bodyParams.length !== 0 ? 
-            <div>
+            <div >
               <h4>Body Params</h4>
-              <div className="row">
+              <div className="row columnLabel">
                     <div className="col-sm">
-                      <h5>Name</h5>
+                      <label>Name</label>
                     </div>
                     <div className="col-sm">
-                      <h5>Description</h5>
+                      <label>Description</label>
                     </div>
                     <div className="col-sm">
-                      <h5>Required </h5>
+                      <label>Required </label>
                     </div>
                 </div>
               </div>
@@ -74,6 +74,7 @@ class DisplayEndpoints extends Component {
                     <p>{path.isRequired}</p>
                   </div>
                 </div>
+                <hr></hr>
                </div> 
               ))
               )
@@ -84,18 +85,18 @@ class DisplayEndpoints extends Component {
             { route.pathParams.length !== 0 ?
               <div> 
                 <h4>Path Params</h4>
-                <div className="row">
+                <div className="row columnLabel">
                   <div className="col-sm">
-                    <h5>Name</h5>
+                    <label>Name</label>
                   </div>
                   <div className="col-sm">
-                    <h5>Data Type</h5>
+                    <label>Data Type</label>
                   </div>
                   <div className="col-sm">
-                    <h5>Description</h5>
+                    <label>Description</label>
                   </div>
                   <div className="col-sm">
-                    <h5>Required </h5>
+                    <label>Required </label>
                   </div>
                 </div>
               </div>
@@ -108,6 +109,7 @@ class DisplayEndpoints extends Component {
                   <div className="col-sm">
                     <p><span className="param">{path.name}</span></p>
                   </div>
+                  
                   <div className="col-sm">
                     <p><span className="param">{path.dataType}</span></p>
                   </div>
@@ -118,6 +120,7 @@ class DisplayEndpoints extends Component {
                     <p>{path.isRequired}</p>
                   </div>
                 </div>
+                <hr></hr>
                </div> 
               ))
               )
@@ -150,38 +153,39 @@ class DisplayEndpoints extends Component {
             { route.responses !== undefined ? 
               (route.responses.map( path => (
             <div key={path.id}>  
-              
-              <div>
-                    <h4>{path.responseCode} {path.responseStatus} Response</h4>
-              </div>
-              <br/>
+                <div>
+                      <h4>{path.responseCode} {path.responseStatus} Response</h4>
+                </div>
+                <br/>
 
-              <div>
+              <div className="responseContainer">
+                <div className="columnLabel">
+                  <div className="row">
+                      <div className="col-sm">
+                        <label>Field Name</label>
+                      </div>
+                      <div className="col-sm">
+                        <label>Field Type</label>
+                      </div>
+                      <div className="col-sm">
+                        <label>Description </label>
+                      </div>
+                    </div>
+                </div>
+
                 <div className="row">
-                    <div className="col-sm">
-                      <h5> Field Name</h5>
-                    </div>
-                    <div className="col-sm">
-                      <h5>Field Type</h5>
-                    </div>
-                    <div className="col-sm">
-                      <h5>Description </h5>
-                    </div>
-                  </div>
-              </div>
-
-              <div className="row">
-                <div className="col-sm">
-                  <div>
-                    <p><span className="param">{path.fieldName}</span></p>
-                  </div>
-                </div>
-                <div className="col-sm">
-                  <p>{path.fieldType}</p>
-                </div>
                   <div className="col-sm">
-                    <p>{path.description}</p>
+                    <div>
+                      <p><span className="param">{path.fieldName}</span></p>
+                    </div>
                   </div>
+                  <div className="col-sm">
+                    <p>{path.fieldType}</p>
+                  </div>
+                    <div className="col-sm">
+                      <p>{path.description}</p>
+                    </div>
+                </div>
               </div>
               <br/>
                 

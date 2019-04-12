@@ -4,8 +4,9 @@ import{connect} from 'react-redux'
 import {fetchRequestType} from '../Redux/Actions/EndpointActions'
 
 import './DisplayEndpoints.css'
+// import './Endpoint.css'
 
- class Endpoints extends Component {
+class Endpoints extends Component {
  
 constructor(props){
   super(props);
@@ -35,18 +36,22 @@ render() {
         <div key={request.id}>
         {/* <p>{request.endpoint}</p> */}
         {request.routes.map(route =>(
-          <div key={route.id}>
+          <div key={route.id} >
           {/* <button className="btn btn-success btn-sm"> {route.requestType} </button>
             <button className="btn btn-secondary btn-sm"> {request.endpoint} - {route.id} </button> */}  
 
             <a href={"#"+route.id}>
-            <button className="btn btn-secondary btn-sm button-css"> 
-            <span className={"styling small rounded text-centered font-weight-bold "
-            //if route.requestType===GET add the class bg-sucess to className
-            +(route.requestType==='PUT'?"bg-warning":"")
-            +(route.requestType==='GET'?"bg-success ":"bg-primary ")
-            }>
-            {route.requestType}</span>  {request.endpoint} - {route.id}</button></a>
+              <button className="btn  btn-sm button-css"> 
+                <span className={"styling small rounded text-centered font-weight-bold "
+                  //if route.requestType===GET add the class bg-sucess to className
+                  +(route.requestType==='PUT'?"bg-warning":"")
+                  +(route.requestType==='GET'?"bg-success ":"bg-primary ")
+                  }>
+                  {route.requestType}
+                </span>  
+                {request.endpoint} - {route.id}
+              </button>
+            </a>
             </div>
           ))    
         }     
@@ -56,16 +61,17 @@ render() {
    
     return (
       <div>
-        <h1>Enpoints</h1>
+        {/* <h1>Endpoints</h1> */}
         {displayEndpoints}
         <br/>
         <div>
-        <span>create new endpoint  </span><button className="btn btn-primary rounded-circle ">+</button>
+          <button className="btn btn-primary">Add Endpoint</button>
         </div>
       </div>
     )
   }
 }
+
 
 //maps the state to the props (sort of like creating props from the state)
 const mapStateToProps= state =>({

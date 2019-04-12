@@ -18,27 +18,18 @@ const MainMenu = () => {
       <div>
         <nav className= "navbar navbar-expand-sm  navbar-dark fixed-top" style={styleTest}>
           <ul className="navbar-nav">
-            {/* <Link to="/screenOne" style={noDecoration}>
-              <li className="nav-link" >
-                screenOne
-              </li>
-            </Link> */}
-            {/* <Link to="/testScreen" style={noDecoration}>
-              <li className="nav-link">
-                TestScreen
-              </li>
-            </Link>  */}
-
+              <li className="nav-link ">
             <Link to="/enpointDoc">
-              <button className="btn btn-secondary ">
-                Endpoint Documentation
-              </button>
+                <button className="btn btn-secondary ">
+                  Endpoint Documentation
+                </button>
             </Link>
-            <Link to="/" style={noDecoration}>
-              <li className="nav-link">
-                Log Out
               </li>
+              <li className="nav-link " >
+            <Link to="/" >
+                <button className="btn btn-danger">Log Out</button>
             </Link> 
+              </li>
 
             
          </ul>

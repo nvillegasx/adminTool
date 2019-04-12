@@ -5,13 +5,16 @@
     min-height: 0%;
 }
 .param {
-    background-color: rgba(169, 169, 169, 0.363);
+    /* background-color: rgba(169, 169, 169, 0.363); */
+    background-color: rgba(0, 138, 252, 0.26);
     font-family: 'Courier New', Courier, monospace;
 }
 .styling{
 
     padding-left:5%;
     padding-right:5%;
+    margin-right: 6%;
+    color: aliceblue;
 }
 .button-css{
     width:60%;
@@ -37,3 +40,16 @@ h3::before{
     visibility: hidden; 
     pointer-events: none;
 }
+
+.responseContainer {
+    border-style: solid;
+    border-color:  rgba(97, 97, 97, 0.158);
+    /* padding-left: 1%; */
+}
+
+.columnLabel {
+    background-color: rgba(97, 97, 97, 0.075);
+}
+a:hover {
+    background-color: 'red';
+  }

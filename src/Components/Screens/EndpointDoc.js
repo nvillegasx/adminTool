@@ -38,7 +38,7 @@ class EndpointDoc extends Component {
                  
                 </header>
           
-                <h1>username: {this.props.user}</h1>
+                {/* <h1>username: {this.props.user}</h1> */}
                 <DisplayEndpoints/>
 
               </div>
@@ -52,7 +52,7 @@ class EndpointDoc extends Component {
           //  will no longer be able to toggle the sidebar
           docked={true}
           transitions={false}
-          styles={{ sidebar: { background: "#282c34", width: 200 } }}
+          styles={{ sidebar: { background: " rgba(97, 97, 97, 0.158)", width: 200 } }}
         >
           {/* <button className="open" onClick={()=> this.onSetSidebarOpen(true)}>
              open sidebar
